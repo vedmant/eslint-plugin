@@ -1,0 +1,34 @@
+{
+  "name": "eslint-plugin-vedmant",
+  "version": "1.0.0",
+  "description": "ESLint rules for Vue and other conventions used by vedmant.",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "vue",
+    "vuejs"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "rules/**/*.js"
+  ],
+  "scripts": {
+    "test": "node __tests__/vue-start-tag-line-comment.test.cjs && node scripts/verify-vue-start-tag-rule.cjs",
+    "prepack": "npm test"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.0 || ^9.0.0",
+    "eslint-plugin-vue": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.25.0",
+    "eslint-plugin-vue": "^9.28.0",
+    "vue-eslint-parser": "^9.4.3"
+  }
+}
