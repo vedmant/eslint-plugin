@@ -1,11 +1,11 @@
-# eslint-plugin-vedmant
+# @vedmant/eslint-plugin
 
 ESLint rules used in vedmant projects. Currently includes layout rules for Vue single-file components.
 
 ## Install
 
 ```bash
-npm install eslint-plugin-vedmant --save-dev
+yarn add -D @vedmant/eslint-plugin
 ```
 
 Peer dependencies (your project should already have these if you lint Vue):
@@ -19,7 +19,7 @@ Peer dependencies (your project should already have these if you lint Vue):
 // eslint.config.js
 const eslintPluginVue = require('eslint-plugin-vue')
 const vueEslintParser = require('vue-eslint-parser')
-const vedmant = require('eslint-plugin-vedmant')
+const vedmantEslintPlugin = require('@vedmant/eslint-plugin')
 
 module.exports = [
   {
@@ -30,11 +30,11 @@ module.exports = [
     },
     plugins: {
       vue: eslintPluginVue,
-      vedmant,
+      '@vedmant': vedmantEslintPlugin,
     },
     processor: eslintPluginVue.processors['.vue'],
     rules: {
-      'vedmant/vue-start-tag-single-line': 'error',
+      '@vedmant/vue-start-tag-single-line': 'error',
     },
   },
 ]
@@ -42,7 +42,7 @@ module.exports = [
 
 ### Rule options
 
-`vedmant/vue-start-tag-single-line` — prefer a single-line opening tag when the attribute count and compact line length are within limits.
+`@vedmant/vue-start-tag-single-line` — prefer a single-line opening tag when the attribute count and compact line length are within limits.
 
 - `maxAttributes` (default `5`) — only suggest one line when there are at most this many attributes.
 - `maxLineLength` (default `300`) — only report when the collapsed tag fits within this many characters.
@@ -50,14 +50,14 @@ module.exports = [
 Example:
 
 ```js
-'vedmant/vue-start-tag-single-line': ['error', { maxAttributes: 5, maxLineLength: 120 }]
+'@vedmant/vue-start-tag-single-line': ['error', { maxAttributes: 5, maxLineLength: 120 }]
 ```
 
 ## Development
 
 ```bash
-npm install
-npm test
+yarn install
+yarn test
 ```
 
 ## License

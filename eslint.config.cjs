@@ -4,7 +4,7 @@ const eslintPluginVue = require('eslint-plugin-vue')
 const vueEslintParser = require('vue-eslint-parser')
 const eslintPluginVedmant = require('./index.js')
 
-/** Local config for running `npm test` on fixture Vue files only. */
+/** Local config for running `yarn test` on fixture Vue files only. */
 module.exports = [
   {
     files: ['**/__tests__/**/*.vue'],
@@ -17,11 +17,11 @@ module.exports = [
     },
     plugins: {
       vue: eslintPluginVue,
-      vedmant: eslintPluginVedmant,
+      '@vedmant': eslintPluginVedmant,
     },
     processor: eslintPluginVue.processors['.vue'],
     rules: {
-      'vedmant/vue-start-tag-single-line': 'error',
+      '@vedmant/vue-start-tag-single-line': 'error',
     },
   },
 ]

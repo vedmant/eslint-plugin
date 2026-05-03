@@ -1,7 +1,7 @@
 'use strict'
 
 /**
- * Ensures vedmant/vue-start-tag-single-line works:
+ * Ensures @vedmant/vue-start-tag-single-line works:
  * - __tests__/compliant.vue passes ESLint
  * - __tests__/fixtures/should-error-multiline-opening.vue fails until --fix (run manually if needed)
  */

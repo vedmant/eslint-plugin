@@ -1,7 +1,10 @@
 {
-  "name": "eslint-plugin-vedmant",
+  "name": "@vedmant/eslint-plugin",
   "version": "1.0.0",
   "description": "ESLint rules for Vue and other conventions used by vedmant.",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "eslint",
     "eslint-plugin",
@@ -17,7 +20,7 @@
   ],
   "scripts": {
     "test": "node __tests__/vue-start-tag-line-comment.test.cjs && node scripts/verify-vue-start-tag-rule.cjs",
-    "prepack": "npm test"
+    "prepack": "yarn test"
   },
   "engines": {
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
