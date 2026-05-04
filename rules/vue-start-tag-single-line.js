@@ -198,7 +198,7 @@ module.exports = {
     const opts = context.options[0] || {}
     const maxAttributes = opts.maxAttributes ?? 5
     const maxLineLength = opts.maxLineLength ?? 300
-    const sourceCode = context.getSourceCode()
+    const sourceCode = context.sourceCode
 
     return utils.defineTemplateBodyVisitor(context, {
       VStartTag (node) {

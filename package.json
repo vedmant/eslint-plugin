@@ -14,6 +14,7 @@
   ],
   "license": "MIT",
   "main": "index.js",
+  "packageManager": "yarn@1.22.22",
   "files": [
     "index.js",
     "rules/**/*.js"
@@ -26,12 +27,11 @@
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "peerDependencies": {
-    "eslint": "^8.57.0 || ^9.0.0",
-    "eslint-plugin-vue": "^8.0.0 || ^9.0.0 || ^10.0.0"
+    "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+    "vue-eslint-parser": ">=9.0.0"
   },
   "devDependencies": {
     "eslint": "^9.25.0",
-    "eslint-plugin-vue": "^9.28.0",
     "vue-eslint-parser": "^9.4.3"
   }
 }

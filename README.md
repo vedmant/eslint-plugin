@@ -8,16 +8,15 @@ ESLint rules used in vedmant projects. Currently includes layout rules for Vue s
 yarn add -D @vedmant/eslint-plugin
 ```
 
-Peer dependencies (your project should already have these if you lint Vue):
+Peer dependencies (install these if not already present):
 
-- `eslint` `^8.57.0` or `^9.0.0`
-- `eslint-plugin-vue` `^8.0.0`, `^9.0.0`, or `^10.0.0`
+- `eslint` `^8.57.0`, `^9.0.0`, or `^10.0.0`
+- `vue-eslint-parser` `>=9.0.0`
 
 ## Usage (ESLint flat config)
 
 ```js
 // eslint.config.js
-const eslintPluginVue = require('eslint-plugin-vue')
 const vueEslintParser = require('vue-eslint-parser')
 const vedmantEslintPlugin = require('@vedmant/eslint-plugin')
 
@@ -29,7 +28,6 @@ module.exports = [
       parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
     },
     plugins: {
-      vue: eslintPluginVue,
       '@vedmant': vedmantEslintPlugin,
     },
     // Do NOT add a processor here — vue-eslint-parser must be the active parser

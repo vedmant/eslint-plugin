@@ -1,6 +1,5 @@
 'use strict'
 
-const eslintPluginVue = require('eslint-plugin-vue')
 const vueEslintParser = require('vue-eslint-parser')
 const eslintPluginVedmant = require('./index.js')
 
@@ -16,9 +15,10 @@ module.exports = [
       },
     },
     plugins: {
-      vue: eslintPluginVue,
       '@vedmant': eslintPluginVedmant,
     },
+    // Do NOT add a processor here — vue-eslint-parser must be the active parser
+    // for template visitors (defineTemplateBodyVisitor) to work.
     rules: {
       '@vedmant/vue-start-tag-single-line': 'error',
     },
