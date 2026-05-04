@@ -1,0 +1,33 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: "eslint-plugin-vue v${{ matrix.eslint-plugin-vue }}"
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        eslint-plugin-vue: ['8', '9', '10']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Install eslint-plugin-vue v${{ matrix.eslint-plugin-vue }}
+        run: yarn add --dev eslint-plugin-vue@${{ matrix.eslint-plugin-vue }}
+
+      - name: Run tests
+        run: yarn test

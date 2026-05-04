@@ -11,7 +11,7 @@ yarn add -D @vedmant/eslint-plugin
 Peer dependencies (your project should already have these if you lint Vue):
 
 - `eslint` `^8.57.0` or `^9.0.0`
-- `eslint-plugin-vue` `^9.0.0`
+- `eslint-plugin-vue` `^8.0.0`, `^9.0.0`, or `^10.0.0`
 
 ## Usage (ESLint flat config)
 
@@ -32,7 +32,8 @@ module.exports = [
       vue: eslintPluginVue,
       '@vedmant': vedmantEslintPlugin,
     },
-    processor: eslintPluginVue.processors['.vue'],
+    // Do NOT add a processor here — vue-eslint-parser must be the active parser
+    // for template visitors (defineTemplateBodyVisitor) to work.
     rules: {
       '@vedmant/vue-start-tag-single-line': 'error',
     },

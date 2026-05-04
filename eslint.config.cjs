@@ -19,7 +19,6 @@ module.exports = [
       vue: eslintPluginVue,
       '@vedmant': eslintPluginVedmant,
     },
-    processor: eslintPluginVue.processors['.vue'],
     rules: {
       '@vedmant/vue-start-tag-single-line': 'error',
     },

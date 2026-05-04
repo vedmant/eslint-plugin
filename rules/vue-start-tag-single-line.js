@@ -4,7 +4,16 @@
  */
 'use strict'
 
-const utils = require('eslint-plugin-vue/lib/utils')
+const utils = {
+  defineTemplateBodyVisitor (context, templateBodyVisitor, scriptVisitor) {
+    // ESLint v9 flat config exposes parserServices on sourceCode; v8 exposes it on context directly.
+    const services = context.sourceCode?.parserServices ?? context.parserServices
+    if (services && services.defineTemplateBodyVisitor) {
+      return services.defineTemplateBodyVisitor(templateBodyVisitor, scriptVisitor || {})
+    }
+    return scriptVisitor || {}
+  },
+}
 
 /** Backtick — use `\u0060` so `'`/`'` pairs are not parsed as an empty string. */
 const BT = '\u0060'
